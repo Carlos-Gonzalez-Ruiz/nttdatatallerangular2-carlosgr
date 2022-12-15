@@ -19,7 +19,7 @@ export class AppComponent {
   propiedad: String;
 
   /** Ejercicio 5 */
-  age: Number;
+  age: Number = 19;
 
   constructor() {
     // Ejercicio 1

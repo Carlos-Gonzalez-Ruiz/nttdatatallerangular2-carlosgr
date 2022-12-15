@@ -6,9 +6,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  @Input() name: String;
-  @Input() surname: String;
-  @Input() age: Number;
+  @Input() name!: String;
+  @Input() surname!: String;
+  @Input() age!: Number;
   @Output() fullname = new EventEmitter<CustomEvent>();
 
   constructor() {}
