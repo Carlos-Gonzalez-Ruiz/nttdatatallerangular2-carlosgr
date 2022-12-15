@@ -8,7 +8,7 @@
     (keyup)="busqueda = inputBusqueda.value"
     (keyup.enter)="search(inputBusqueda.value)"
   />
-  <button (click)="search(inputBusqueda.value)">Buscar</button>
+  <button (click)="search(inputBusqueda.value)">{{labelButton}}</button>
 </form>
 <p>Parámetro de búsqueda: {{ busqueda }}</p>
 <p>Resultado: {{ result }}</p>

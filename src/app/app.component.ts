@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { UtilsService } from './service/utils.service';
 
 @Component({
   selector: 'my-app',
@@ -21,6 +22,10 @@ export class AppComponent {
   /** Ejercicio 5 */
   age: Number = 19;
 
+  /** Ejercicio 8 */
+  textoOriginal: String = 'Verschwende deine Zeit - Edwin Rosen';
+  textoCapitalized: String;
+
   constructor() {
     // Ejercicio 1
     this.nombreDelProgramador = 'Carlos González Ruiz';
@@ -30,6 +35,8 @@ export class AppComponent {
     this.urlAcademiaBinaria = 'https://github.com/Carlos-Gonzalez-Ruiz';
     this.usuarioAutenticado = false;
     this.nombreUsuario = 'Carlos';
+
+    this.textoCapitalized = UtilsService.capitalize(this.textoOriginal);
   }
 
   onkey(event: KeyboardEvent) {
