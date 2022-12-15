@@ -1,4 +1,5 @@
 import { Component, VERSION } from '@angular/core';
+import { Cliente } from './model/cliente';
 import { UtilsService } from './service/utils.service';
 
 @Component({
@@ -22,9 +23,15 @@ export class AppComponent {
   /** Ejercicio 5 */
   age: Number = 19;
 
+  /** Ejercicio 6 */
+  cliente: Cliente;
+
   /** Ejercicio 8 */
-  textoOriginal: String = 'Verschwende deine Zeit - Edwin Rosen';
+  textoOriginal: String = 'verschwende deine Zeit - Edwin Rosen';
   textoCapitalized: String;
+
+  /** Ejercicio 9 */
+  appResult: String;
 
   constructor() {
     // Ejercicio 1
@@ -36,6 +43,14 @@ export class AppComponent {
     this.usuarioAutenticado = false;
     this.nombreUsuario = 'Carlos';
 
+    // Ejercicio 6
+    this.cliente = {
+      nombre: 'Carlos',
+      apellidos: 'González González',
+      fecha: new Date('2003/10/28'),
+    };
+
+    // Ejercicio 8
     this.textoCapitalized = UtilsService.capitalize(this.textoOriginal);
   }
 
@@ -55,5 +70,9 @@ export class AppComponent {
     alert(
       event.detail.name + ' ' + event.detail.surname + ', ' + event.detail.age
     );
+  }
+
+  setAppResult(event: String) {
+    this.appResult = event;
   }
 }

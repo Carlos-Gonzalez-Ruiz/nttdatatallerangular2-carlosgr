@@ -52,11 +52,21 @@
 </div>
 
 <h1>Ejercicio 6</h1>
-<div></div>
+<div>
+  <h3>Nombre del cliente</h3>
+  <p>{{ cliente.nombre }}</p>
+  <h3>Apellidos del cliente</h3>
+  <p>{{ cliente.apellidos }}</p>
+  <h3>Fecha de nacimiento del cliente</h3>
+  <p>{{ cliente.fecha | date: 'dd/MM/yyyy' }}</p>
+</div>
 
 <h1>Ejercicio 7</h1>
 <div>
-  <app-search labelButton="Buscar (@Input)"></app-search>
+  <app-search
+    labelButton="Buscar (@Input)"
+    (setAppResult)="setAppResult($event)"
+  ></app-search>
 </div>
 
 <h1>Ejercicio 8</h1>
@@ -65,4 +75,9 @@
     Original: {{ textoOriginal }} <br />
     Mayúsculas {{ textoCapitalized }}
   </p>
+</div>
+
+<h1>Ejercicio 9</h1>
+<div>
+  <p>Valor del input capitalizado: {{ appResult }}</p>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { UtilsService } from '../../service/utils.service';
 
 @Component({
   selector: 'app-search',
@@ -11,11 +12,14 @@ export class SearchComponent implements OnInit {
 
   @Input() labelButton!: String;
 
+  @Output() setAppResult = new EventEmitter<String>();
+
   constructor() {}
 
   ngOnInit() {}
 
   search(query: String) {
     this.result = 'Resultado para la búsqueda "' + query + '"';
+    this.setAppResult.emit(UtilsService.capitalize(query));
   }
 }
