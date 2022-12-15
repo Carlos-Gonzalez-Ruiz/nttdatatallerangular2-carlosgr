@@ -44,7 +44,9 @@ export class AppComponent {
     }
   }
 
-  viewFullName(event: Event) {
-    alert('testttt');
+  viewFullName(event: CustomEvent) {
+    alert(
+      event.detail.name + ' ' + event.detail.surname + ', ' + event.detail.age
+    );
   }
 }

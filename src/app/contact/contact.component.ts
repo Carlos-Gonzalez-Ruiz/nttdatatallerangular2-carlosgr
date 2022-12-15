@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -6,16 +6,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  @Input('name') name: String;
-  @Input('surname') surname: String;
-  @Input('age') age: Number;
-  @Input('fullname') fullname: Function;
+  @Input() name: String;
+  @Input() surname: String;
+  @Input() age: Number;
+  @Output() fullname = new EventEmitter<CustomEvent>();
 
   constructor() {}
 
   ngOnInit() {}
 
   mostrarDatos() {
-    alert(this.name + ' ' + this.surname + ', ' + this.age + "\n" + this.fullname);
+    this.fullname.emit(
+      new CustomEvent('datos', {
+        detail: {
+          name: this.name,
+          surname: this.surname,
+          age: this.age,
+        },
+      })
+    );
   }
 }
