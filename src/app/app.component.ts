@@ -27,7 +27,7 @@ export class AppComponent {
   cliente: Cliente;
 
   /** Ejercicio 8 */
-  textoOriginal: String = 'verschwende deine Zeit - Edwin Rosen';
+  textoOriginal: String = 'verschwende deine zeit - edwin rosen';
   textoCapitalized: String;
 
   /** Ejercicio 9 */
