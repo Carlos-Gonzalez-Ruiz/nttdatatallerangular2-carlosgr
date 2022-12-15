@@ -1,0 +1,52 @@
+<h1>Ejercicio 1</h1>
+<div>
+  <p>Hola {{ nombreDelProgramador }}, ¡bienvenido a angular!</p>
+  <p>Fecha de nacimiento: {{ fechaNacimiento | date }}</p>
+  <p>
+    Fecha de nacimiento (con formato) :
+    {{ fechaNacimiento | date: 'dd/MM/yyyy' }}
+  </p>
+</div>
+
+<h1>Ejercicio 2</h1>
+<div>
+  <p>
+    Hola <input [value]="nombreDelProgramador" readonly="" />, ¡bienvenido a
+    angular!
+  </p>
+  <a [href]="urlAcademiaBinaria">Academia binaria</a>
+  <div [hidden]="usuarioAutenticado">Identificate</div>
+  <div [hidden]="!usuarioAutenticado">Hola {{ nombreUsuario }}</div>
+</div>
+
+<h1>Ejercicio 3</h1>
+<div>
+  <p>Introduzca una letra:</p>
+  <input (keyup)="onkey($event)" />
+  <p>Nombre:</p>
+  <input
+    #nombre
+    (keyup.enter)="propiedad = nombre.value"
+    (blur)="propiedad = nombre.value"
+  />
+  <p>Su nombre es: {{ propiedad }}</p>
+  <button (click)="lanzarCohete()">Lanzar cohete</button>
+</div>
+
+<h1>Ejercicio 4</h1>
+<div>
+  <p>Nombre: {{ propiedad }}</p>
+  <input type="text" [(ngModel)]="propiedad" />
+  <button (click)="lanzarCohete()">Lanzar cohete</button>
+</div>
+
+<h1>Ejercicio 5</h1>
+<div>
+  <app-contact
+    name="Pepito"
+    surname="Ruiz González"
+    [age]="19"
+    (fullname)="viewFullName($event)"
+  >
+  </app-contact>
+</div>
