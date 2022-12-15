@@ -5,10 +5,16 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ContactComponent } from './component/contact/contact.component';
+import { SearchComponent } from './component/search/search.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
-  declarations: [AppComponent, HelloComponent, ContactComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    ContactComponent,
+    SearchComponent,
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

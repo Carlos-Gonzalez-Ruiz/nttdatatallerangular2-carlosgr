@@ -1,0 +1,14 @@
+<h2>Buscador</h2>
+<form>
+  <label for="inputBusqueda">Buscar </label>
+  <input
+    #inputBusqueda
+    type="text"
+    placeholder="Query a ejecutar"
+    (keyup)="busqueda = inputBusqueda.value"
+    (keyup.enter)="search(inputBusqueda.value)"
+  />
+  <button (click)="search(inputBusqueda.value)">Buscar</button>
+</form>
+<p>Parámetro de búsqueda: {{ busqueda }}</p>
+<p>Resultado: {{ result }}</p>
